@@ -120,8 +120,15 @@ body {
   transition: 0.3s;
 }
 
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @media only screen and (max-width: 600px) {
   .input {
     font-size: 20px;
+  }
+  .buttons{
+    text-align: center;
   }
 }

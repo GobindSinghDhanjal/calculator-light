@@ -1,10 +1,8 @@
 "use client";
-import { Col, Row, Typography } from "antd";
+import Grid from "@mui/material/Unstable_Grid2";
 import { Button } from "./components/Button";
 import { DisplayBox } from "./components/DisplayBox";
 import { OperationButton } from "./components/OperationButton";
-
-const { Title } = Typography;
 
 export default function Home() {
   const renderComponents = () => {
@@ -17,25 +15,27 @@ export default function Home() {
     return components;
   };
 
-  const operations=["+","-","\\","*"];
+  const operations = ["+", "-", "\\", "*"];
 
   return (
     <div className="row">
-      <Title>CALCULATOR</Title>
-      <Row>
-        <Col xs={2} md={6} lg={8}></Col>
-        <Col xs={20} md={10} lg={8}>
+      CALCULATOR
+      <Grid container>
+        <Grid xs={0} md={2} lg={4}></Grid>
+        <Grid xs={12} md={8} lg={4}>
           <DisplayBox />
-          {renderComponents()}
+          <div className="buttons">{renderComponents()}</div>
           <br />
-          {
-            operations.map((operation)=>{
-              return(<OperationButton operation={operation}/>)
-            })
-          }
-        </Col>
-        <Col xs={2} md={6} lg={8}></Col>
-      </Row>
+          <div className="buttons">
+
+    
+          {operations.map((operation) => {
+            return <OperationButton operation={operation} />;
+          })}
+          </div>
+        </Grid>
+        <Grid xs={0} md={2} lg={4}></Grid>
+      </Grid>
     </div>
   );
 }
