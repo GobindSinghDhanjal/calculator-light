@@ -3,7 +3,12 @@ body {
 }
 
 .row {
-  margin-top: 50px;
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  margin: 30px auto;
+  width: 100%;
 }
 
 .toggle {
@@ -28,15 +33,6 @@ body {
   width: 72px;
   left: 50%;
   top: 50%;
-}
-
-.operation {
-  width: 100px !important;
-  margin-left: -50.4px !important;
-}
-
-.operation-toggle {
-  margin-right: 10px;
 }
 
 .toggle .button {
@@ -98,26 +94,30 @@ body {
   color: rgb(0, 17, 60);
 }
 
-.display-box {
-  text-align: center;
-  margin: 20px auto;
-}
-
 .input {
   border: none;
   padding: 2rem;
-  font-size: 35px;
+  font-weight: 700;
+  font-size: 40px;
+  width: 335px;
+  margin-bottom: 20px;
   border-radius: 1rem;
   background: #e8e8e8;
   box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff;
   transition: 0.3s;
 }
 
-.input:focus {
-  outline-color: #e8e8e8;
-  background: #e8e8e8;
-  box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
-  transition: 0.3s;
+.display-box {
+  display: inline-flex !important;
+}
+
+.display-box input {
+  text-align: right;
+  color: black;
+}
+
+.display-box input::placeholder {
+  color: black;
 }
 
 input {
@@ -125,10 +125,14 @@ input {
 }
 
 @media only screen and (max-width: 600px) {
-  .input {
-    font-size: 20px;
+
+  .toggle{
+    width: 82px;
   }
-  .buttons{
+  .input{
+    width: 265px;
+  }
+  .buttons {
     text-align: center;
   }
 }
